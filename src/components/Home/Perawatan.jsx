@@ -142,7 +142,7 @@ const Perawatan = () => {
   return (
     <div className="font-syne">
       <div className="text-center text-4xl mt-10">Perawatan & Layanan</div>
-      <div className="flex justify-center gap-3 ">
+      <div className="flex justify-center gap-3 mb-10">
         <button
           className={`max-sm:w-[25%] max-sm:px-1 px-2 py-1 border border-[#E4C9EB] w-[12%] ${
             show == "Perawatan Rambut" ? "bg-[#7E587D]" : "bg-white"
@@ -171,25 +171,59 @@ const Perawatan = () => {
         </button>
       </div>
       <div className="bg-white px-6">
-        {show == "Perawatan Wajah" && (
+        {show == "Perawatan Rambut" && (
           <Swiper
             slidesPerView={isMobile ? 1 : 3}
-            spaceBetween={10}
+            spaceBetween={20}
             keyboard={{
               enabled: true,
             }}
             navigation={true}
             modules={[Keyboard, Navigation]}
-            className="mySwiper"
+            className="mySwiper p-7"
+          >
+            <div>
+              {PerawatanRambut.map((item, index) => {
+                return (
+                  <SwiperSlide
+                    className="flex justify-between w-fit px-5"
+                    key={index}
+                  >
+                    <div className="">
+                      <div className="">
+                        <Card
+                          isGenap={index % 2 != 0 ? true : false}
+                          TreatmentName={item.TreatmentName}
+                          TreatmentDesc={item.TreatmentDesc}
+                          TreatmentPrice={item.TreatmentPrice}
+                        />
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
+            </div>
+          </Swiper>
+        )}
+        {show == "Perawatan Wajah" && (
+          <Swiper
+            slidesPerView={isMobile ? 1 : 3}
+            spaceBetween={20}
+            keyboard={{
+              enabled: true,
+            }}
+            navigation={true}
+            modules={[Keyboard, Navigation]}
+            className="mySwiper p-7"
           >
             <div>
               {PerawatanWajah.map((item, index) => {
                 return (
                   <SwiperSlide
-                    className="flex justify-between w-full"
+                    className="flex justify-between w-full px-5"
                     key={index}
                   >
-                    <div className="px-12 py-5 ">
+                    <div className=" ">
                       <div className="">
                         <Card
                           isGenap={index % 2 != 0 ? true : false}
@@ -215,51 +249,16 @@ const Perawatan = () => {
             }}
             navigation={true}
             modules={[Keyboard, Navigation]}
-            className="mySwiper"
+            className="mySwiper p-7"
           >
             <div>
               {PerawatanTubuh.map((item, index) => {
                 return (
                   <SwiperSlide
-                    className="flex justify-between w-full "
+                    className="flex justify-between w-full px-5"
                     key={index}
                   >
-                    <div className="px-12 py-5 ">
-                      <div className="">
-                        <Card
-                          isGenap={index % 2 != 0 ? true : false}
-                          TreatmentName={item.TreatmentName}
-                          TreatmentDesc={item.TreatmentDesc}
-                          TreatmentPrice={item.TreatmentPrice}
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
-            </div>
-          </Swiper>
-        )}
-
-        {show == "Perawatan Rambut" && (
-          <Swiper
-            slidesPerView={isMobile ? 1 : 3}
-            spaceBetween={20}
-            keyboard={{
-              enabled: true,
-            }}
-            navigation={true}
-            modules={[Keyboard, Navigation]}
-            className="mySwiper"
-          >
-            <div>
-              {PerawatanRambut.map((item, index) => {
-                return (
-                  <SwiperSlide
-                    className="flex justify-between w-fit "
-                    key={index}
-                  >
-                    <div className="">
+                    <div className=" ">
                       <div className="">
                         <Card
                           isGenap={index % 2 != 0 ? true : false}
