@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import Card from "./Card";
@@ -7,6 +7,7 @@ import Card from "./Card";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import BgCard from "../../assets/backgroundcard.png";
 
 // import required modules
 import { Keyboard, Navigation } from "swiper/modules";
@@ -140,47 +141,52 @@ const Perawatan = () => {
 
   const isMobile = useIsMobile();
   return (
-    <div className="font-syne">
-      <div className="text-center text-4xl mt-10">Perawatan & Layanan</div>
-      <div className="flex justify-center gap-3 mb-10">
+    <div className="font-syne ">
+      <div className="max-sm:text-[16px] text-center text-[48px] mt-10">
+        Perawatan & Layanan
+      </div>
+      <div className="max-sm:mb-2 flex justify-center gap-3 mb-10">
         <button
-          className={`max-sm:w-[25%] max-sm:px-1 px-2 py-1 border border-[#E4C9EB] w-[12%] ${
+          className={`max-sm:text-[6px] max-sm:w-[65px] max-sm:px-1 px-2 py-1 border border-[#E4C9EB] w-[223px] ${
             show == "Perawatan Rambut" ? "bg-[#7E587D]" : "bg-white"
-          }  rounded-lg mt-6 text-sm text-black`}
+          } max-sm:mt-2 rounded-lg mt-6 text-[20px] text-black`}
           onClick={() => setShow("Perawatan Rambut")}
         >
           Perawatan Rambut
         </button>
 
         <button
-          className={` max-sm:w-[25%] px-2 py-1 border border-[#E4C9EB] w-[12%] ${
+          className={`max-sm:text-[6px] max-sm:w-[65px] max-sm:px-1 px-2 py-1 border border-[#E4C9EB] w-[223px] ${
             show == "Perawatan Wajah" ? "bg-[#7E587D]" : "bg-white"
-          }  rounded-lg mt-6 text-sm text-black`}
+          } max-sm:mt-2 rounded-lg mt-6 text-[20px] text-black`}
           onClick={() => setShow("Perawatan Wajah")}
         >
           Perawatan Wajah
         </button>
 
         <button
-          className={`max-sm:w-[25%] px-2 py-1 border border-[#E4C9EB] w-[12%] ${
+          className={`max-sm:text-[6px] max-sm:w-[65px] max-sm:px-1 px-2 py-1 border border-[#E4C9EB] w-[223px] ${
             show == "Perawatan Tubuh" ? "bg-[#7E587D]" : "bg-white"
-          }  rounded-lg mt-6 text-sm text-black`}
+          } max-sm:mt-2 rounded-lg mt-6 text-[20px] text-black`}
           onClick={() => setShow("Perawatan Tubuh")}
         >
           Perawatan Tubuh
         </button>
       </div>
-      <div className="bg-white px-6">
+      <div
+        className="max-sm:px-2 px-6"
+        style={{ backgroundImage: `url(${BgCard})` }}
+      >
         {show == "Perawatan Rambut" && (
           <Swiper
-            slidesPerView={isMobile ? 1 : 3}
+            slidesPerView={isMobile ? 2 : 3}
             spaceBetween={20}
             keyboard={{
               enabled: true,
             }}
             navigation={true}
             modules={[Keyboard, Navigation]}
-            className="mySwiper p-7"
+            className="mySwiper max-sm:p-4 p-10"
           >
             <div>
               {PerawatanRambut.map((item, index) => {
@@ -207,7 +213,7 @@ const Perawatan = () => {
         )}
         {show == "Perawatan Wajah" && (
           <Swiper
-            slidesPerView={isMobile ? 1 : 3}
+            slidesPerView={isMobile ? 2 : 3}
             spaceBetween={20}
             keyboard={{
               enabled: true,
@@ -242,7 +248,7 @@ const Perawatan = () => {
 
         {show == "Perawatan Tubuh" && (
           <Swiper
-            slidesPerView={isMobile ? 1 : 3}
+            slidesPerView={isMobile ? 2 : 3}
             spaceBetween={20}
             keyboard={{
               enabled: true,

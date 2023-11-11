@@ -5,22 +5,24 @@ import Logo from "../assets/log.svg";
 
 function Footer() {
   return (
-    <div className="flex justify-between p-10 ">
-      <div className="flex-shrink-0">
-        <img src={Logo} alt="" />
+    <div className="max-sm:py-4 flex justify-between py-5 items-center">
+      <div className="w-1/2">
+        <img
+          src={Logo}
+          alt=""
+          className="max-sm:w-[135px] max-sm:h-[15px] ml-[8px]"
+        />
       </div>
 
-      <div>
-        <div className="flex justify-evenly">
-          <div className="mt-6">
+      <div className="w-1/2">
+        <div className="max-sm:gap-[12px] w-[75%] m-auto flex justify-end gap-[24px]">
+          <div className="max-sm:w-[7px] max-sm:h-[7px]">
             <img src={WAP} alt="" />
           </div>
-          <div className="mt-6 ">
+          <div className="max-sm:w-[7px] max-sm:h-[7px] ml-[8px]">
             <img src={IGP} alt="" />
           </div>
         </div>
-
-        <div className="mt-4 text-[#4A335F]">Proudly Powered by DavinDONK</div>
       </div>
     </div>
   );

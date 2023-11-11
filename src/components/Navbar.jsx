@@ -64,7 +64,7 @@ const Navbar = () => {
           )}
         </button>
         {navList}
-        <button>Tes</button>
+        <button className="max-sm:hidden">Tes</button>
       </div>
     </nav>
   );

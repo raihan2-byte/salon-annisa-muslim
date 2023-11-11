@@ -9,3 +9,13 @@
     @apply scroll-smooth;
   }
 }
+
+@media only screen and (max-width: 640px) {
+  .swiper-button-next::after {
+    font-size: 20px;
+  }
+
+  .swiper-button-prev::after {
+    font-size: 20px;
+  }
+}
