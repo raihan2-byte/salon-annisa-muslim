@@ -6,6 +6,7 @@ import Panyileukan from "../assets/panyileukan.png";
 import SimpangMas from "../assets/simpang-mas.png";
 import MetroIndah from "../assets/metro-indah.png";
 import MargaCinta from "../assets/marga-cinta.png";
+import Backround from "../assets/backgroundLokasi.png";
 
 import Contact from "../components/Kontak";
 
@@ -66,7 +67,8 @@ export default function Home() {
         navigation={true}
         pagination={true}
         modules={[Keyboard, Navigation, Pagination]}
-        className="max-sm:p-0 mySwiper p-7 "
+        className="max-sm:py-5 max-sm:px-0 mySwiper p-7 "
+        style={{ backgroundImage: `url(${Backround})` }}
       >
         {slide.map((item, index) => {
           return (
@@ -91,6 +93,7 @@ export default function Home() {
     .swiper-button-next, .swiper-button-prev {
       display: none;
     }
+    
   `}
       </style>
       <Contact />

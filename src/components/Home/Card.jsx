@@ -19,7 +19,7 @@ const Card = ({ TreatmentName, TreatmentDesc, TreatmentPrice, isGenap }) => {
           </div>
           <div className="flex justify-center items-center">
             <button className="max-sm:text-[6px] max-sm:h-[21px] max-sm:p-0 max-sm:w-[70px] text-[20px] bg-[#4A335F] p-3 flex items-center justify-center text-white rounded-sm h-[67px]">
-              Pesan Sekarang
+              Order Sekarang
               <img
                 src={next}
                 alt="no foto"

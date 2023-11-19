@@ -7,6 +7,7 @@ import Kontak from "../components/Kontak";
 import Testimonial from "../components/Home/Testimonial";
 
 export default function Home() {
+  
   return (
     <Layout>
       <Hero />
