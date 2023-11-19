@@ -8,7 +8,7 @@ const listMenu = [
   { name: "Beranda", content: [], path: "/" },
   { name: "Blog", content: [], path: "/blog" },
   { name: "Lokasi", content: [], path: "/lokasi" },
-  { name: "Blog", content: [], path: "/blog" },
+  { name: "Tentang Kami", content: [], path: "/tentangKami" },
   { name: "Testimoni", content: [], path: "/testimoni" },
   { name: "Kontak", content: [], path: "/kontak" },
 ];
