@@ -147,27 +147,27 @@ const Perawatan = () => {
       </div>
       <div className="max-sm:mb-2 flex justify-center gap-3 mb-10">
         <button
-          className={`max-sm:text-[6px] max-sm:w-[65px] max-sm:px-1 px-2 py-1 border border-[#E4C9EB] w-[223px] ${
+          className={`max-sm:text-[6px] max-sm:w-[65px] max-sm:px-0 px-2 py-1 border-4 border-[#E4C9EB] w-[223px] ${
             show == "Perawatan Rambut" ? "bg-[#7E587D]" : "bg-white"
-          } max-sm:mt-2 rounded-lg mt-6 text-[20px] text-black`}
+          } max-sm:mt-2 rounded-[134px] mt-6 text-[20px] text-black`}
           onClick={() => setShow("Perawatan Rambut")}
         >
           Perawatan Rambut
         </button>
 
         <button
-          className={`max-sm:text-[6px] max-sm:w-[65px] max-sm:px-1 px-2 py-1 border border-[#E4C9EB] w-[223px] ${
+          className={`max-sm:text-[6px] max-sm:w-[65px] max-sm:px-0 px-2 py-1 border-4 border-[#E4C9EB] w-[223px] ${
             show == "Perawatan Wajah" ? "bg-[#7E587D]" : "bg-white"
-          } max-sm:mt-2 rounded-lg mt-6 text-[20px] text-black`}
+          } max-sm:mt-2 rounded-[134px] mt-6 text-[20px] text-black`}
           onClick={() => setShow("Perawatan Wajah")}
         >
           Perawatan Wajah
         </button>
 
         <button
-          className={`max-sm:text-[6px] max-sm:w-[65px] max-sm:px-1 px-2 py-1 border border-[#E4C9EB] w-[223px] ${
+          className={`max-sm:text-[6px] max-sm:w-[65px] max-sm:px-0 px-2 py-1 border-4 border-[#E4C9EB] w-[223px] ${
             show == "Perawatan Tubuh" ? "bg-[#7E587D]" : "bg-white"
-          } max-sm:mt-2 rounded-lg mt-6 text-[20px] text-black`}
+          } max-sm:mt-2 rounded-[134px] mt-6 text-[20px] text-black`}
           onClick={() => setShow("Perawatan Tubuh")}
         >
           Perawatan Tubuh
@@ -184,15 +184,18 @@ const Perawatan = () => {
             keyboard={{
               enabled: true,
             }}
-            navigation={true}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
             modules={[Keyboard, Navigation]}
-            className="mySwiper max-sm:p-4 p-10"
+            className="mySwiper max-sm:px-7 p-10"
           >
             <div>
               {PerawatanRambut.map((item, index) => {
                 return (
                   <SwiperSlide
-                    className="flex justify-between w-fit px-5"
+                    className="max-sm:px-3 flex justify-between w-fit px-5"
                     key={index}
                   >
                     <div className="">
@@ -209,6 +212,8 @@ const Perawatan = () => {
                 );
               })}
             </div>
+            <div className="swiper-button-next  "></div>
+            <div className="swiper-button-prev  "></div>
           </Swiper>
         )}
         {show == "Perawatan Wajah" && (
@@ -218,7 +223,10 @@ const Perawatan = () => {
             keyboard={{
               enabled: true,
             }}
-            navigation={true}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
             modules={[Keyboard, Navigation]}
             className="mySwiper p-7"
           >
@@ -226,7 +234,7 @@ const Perawatan = () => {
               {PerawatanWajah.map((item, index) => {
                 return (
                   <SwiperSlide
-                    className="flex justify-between w-full px-5"
+                    className="max-sm:px-3 flex justify-between w-fit px-5"
                     key={index}
                   >
                     <div className=" ">
@@ -243,6 +251,8 @@ const Perawatan = () => {
                 );
               })}
             </div>
+            <div className="swiper-button-next  "></div>
+            <div className="swiper-button-prev  "></div>
           </Swiper>
         )}
 
@@ -253,7 +263,10 @@ const Perawatan = () => {
             keyboard={{
               enabled: true,
             }}
-            navigation={true}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
             modules={[Keyboard, Navigation]}
             className="mySwiper p-7"
           >
@@ -261,7 +274,7 @@ const Perawatan = () => {
               {PerawatanTubuh.map((item, index) => {
                 return (
                   <SwiperSlide
-                    className="flex justify-between w-full px-5"
+                    className="max-sm:px-3 flex justify-between w-fit px-5"
                     key={index}
                   >
                     <div className=" ">
@@ -278,6 +291,8 @@ const Perawatan = () => {
                 );
               })}
             </div>
+            <div className="swiper-button-next  "></div>
+            <div className="swiper-button-prev  "></div>
           </Swiper>
         )}
       </div>

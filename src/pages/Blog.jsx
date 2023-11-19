@@ -5,7 +5,7 @@ export default function Blog() {
   return (
     <Layout>
       <div className="py-20 px-16">
-        <div className=" text-gray-700 lg:text-5xl md:text-3xl text-xl font-bold tracking-wide mb-10">
+        <div className=" text-[#4A335F] lg:text-5xl md:text-3xl text-xl font-bold tracking-wide mb-10 font-syne">
           Blog & Informasi
         </div>
         <div className="flex flex-col gap-5">
@@ -18,7 +18,7 @@ export default function Blog() {
               >
                 <div className="lg:min-w-[323px] md:max-w-none max-w-[250px] md:min-w-[223px] min-w-[170px] h-fit aspect-square bg-zinc-300 rounded-md" />
                 <div className="flex flex-col gap-5">
-                  <p className="text-gray-700 lg:text-[32px] md:text-2xl font-semibold">
+                  <p className="text-[#4A335F] lg:text-[32px] md:text-2xl font-semibold">
                     Manfaat Creambath bagi Wanita{" "}
                   </p>
                   <p className="lg:text-base md:text-sm text-xs">

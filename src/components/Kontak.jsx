@@ -7,10 +7,10 @@ export default function Kontak() {
     <div className="flex justify-between bg-white">
       <div className="max-sm:pl-10 max-sm:p-0 p-20 my-auto font-syne">
         <div className="max-sm:mb-4 mb-8 ">
-          <div className="max-sm:text-[10px] text-[#7E587D] mt-4 text-[24px]">
+          <div className="max-sm:text-[10px] text-[#7E587D] mt-4 text-[24px] font-semibold">
             ingin tau lebih lanjut?
           </div>
-          <div className="max-sm:text-[12px] text-[48px] text-[#4A335F]">
+          <div className="max-sm:text-[12px] text-[48px] text-[#4A335F] font-bold">
             Hubungi Kami
           </div>
         </div>
