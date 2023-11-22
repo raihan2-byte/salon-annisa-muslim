@@ -68,7 +68,10 @@ export default function Home() {
         pagination={true}
         modules={[Keyboard, Navigation, Pagination]}
         className="max-sm:py-5 max-sm:px-0 mySwiper p-7 "
-        style={{ backgroundImage: `url(${Backround})` }}
+        style={{
+          backgroundImage: `url(${Backround})`,
+          backgroundRepeat: "no-repeat",
+        }}
       >
         {slide.map((item, index) => {
           return (
@@ -82,6 +85,8 @@ export default function Home() {
                 OpenAt={item.TreatmentPrice}
                 Maps={item.Maps}
                 LocationImage={item.LocationImage}
+                isGenap={index % 2 != 0 ? true : false}
+                isTextGenap={index % 2 != 0 ? true : false}
               />
             </SwiperSlide>
           );

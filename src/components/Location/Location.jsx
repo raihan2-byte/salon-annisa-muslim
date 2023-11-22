@@ -9,14 +9,21 @@ const Lokasi = ({
   OpenAt,
   Maps,
   LocationImage,
+  isGenap,
+  isTextGenap,
 }) => {
   return (
-    <div
-      className=" max-w-screen-2xl m-auto "
-      // style={{ backgroundImage: `url(${Backround})` }}
-    >
-      <div className="max-sm:m-2 max-sm:p-2 flex justify-between m-5 p-5 gap-2">
-        <div className="max-sm:gap-2 flex flex-col gap-5 ">
+    <div className="max-w-screen-2xl m-auto ">
+      <div
+        className={`"max-sm:m-2 max-sm:p-2 flex justify-between m-5 p-5 gap-2" ${
+          isGenap == true ? "flex-row-reverse" : "flex-row"
+        }`}
+      >
+        <div
+          className={`"max-sm:gap-2 flex flex-col gap-5 " ${
+            isTextGenap == true ? "text-right" : "text-left"
+          } `}
+        >
           <div className="text-[24px]">
             <div className="max-sm:text-[10px] font-syne font-bold">Alamat</div>
             <div className="max-sm:text-[8px] font-poppins text-[#7E587D] font-medium">

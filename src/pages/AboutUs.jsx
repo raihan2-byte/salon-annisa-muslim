@@ -11,7 +11,7 @@ export default function AboutUs() {
   return (
     <Layout>
       <div className="text-center ">
-        <div className="max-sm:w-[338px] max-sm:h-[203px] max-sm:p-[12px] rounded-md border-[#E4C9EB] border-4 w-[1312px] h-[308px] p-[32px] m-auto ">
+        <div className="max-sm:w-[338px] max-sm:h-[203px] max-sm:p-[12px] rounded-md border-[#E4C9EB] border-4 w-[95%] h-[308px] p-[32px] mx-auto my-6 ">
           <div className="max-sm:text-[16px] text-[48px]  text-[#4A335F] font-semibold">
             Kami Hadir Untuk Anda
           </div>
@@ -39,9 +39,9 @@ export default function AboutUs() {
       </div>
 
       {/* ALL GRID */}
-      <div className="max-sm:grid-cols-1 max-sm:m-2  text-center  grid grid-cols-2 gap-4 m-16 ">
+      <div className="max-sm:grid-cols-1 max-sm:m-2  text-center  grid grid-cols-2 gap-4 m-16 place-items-center">
         {/* Box Grid 1 */}
-        <div className="max-sm:w-[338px] max-sm:h-[134px] max-sm:p-[10px] rounded-xl border-[#E4C9EB] border-4 ml-4 w-[649px] h-[240px] text-center p-[32px]">
+        <div className="max-sm:w-[338px] max-sm:h-[134px] max-sm:p-[10px] rounded-xl border-[#E4C9EB] border-4  w-full h-[240px] text-center p-[32px]">
           <div className="flex flex-row items-center">
             <img src={AB1} alt="" className="max-sm:w-[40px] max-sm:h-[40px]" />
             <div className="max-sm:text-[12px] text-2xl text-[#4A335F] font-bold  pl-2">
@@ -55,7 +55,7 @@ export default function AboutUs() {
         </div>
 
         {/* Box Grid 2 */}
-        <div className="max-sm:w-[338px] max-sm:h-[134px] max-sm:p-[10px] max-sm:mr-0 max-sm:ml-4 rounded-xl border-[#E4C9EB] border-4 mr-4 w-[649px] h-[240px] text-center p-[32px] ">
+        <div className="max-sm:w-[338px] max-sm:h-[134px] max-sm:p-[10px] max-sm:mr-0 rounded-xl border-[#E4C9EB] border-4 mr-4 w-full h-[240px] text-center p-[32px] ">
           <div className="flex flex-row items-center">
             <img src={AB2} alt="" className="max-sm:w-[40px] max-sm:h-[40px]" />
             <div className="max-sm:text-[12px] text-2xl text-[#4A335F] font-bold  pl-2">
@@ -68,7 +68,7 @@ export default function AboutUs() {
           </div>
         </div>
         {/* Box Grid 3 */}
-        <div className="max-sm:w-[338px] max-sm:h-[134px] max-sm:p-[10px]  rounded-xl border-[#E4C9EB] border-4 ml-4 w-[649px] h-[240px] text-center p-[32px]">
+        <div className="max-sm:w-[338px] max-sm:h-[134px] max-sm:p-[10px]  rounded-xl border-[#E4C9EB] border-4 w-full h-[240px] text-center p-[32px]">
           <div className="flex flex-row items-center ">
             <img src={AB3} alt="" className="max-sm:w-[40px] max-sm:h-[40px]" />
             <div className="max-sm:text-[12px] text-2xl text-[#4A335F] font-bold  pl-2">
@@ -81,7 +81,7 @@ export default function AboutUs() {
           </div>
         </div>
         {/* Box Grid 4 */}
-        <div className=" max-sm:w-[338px] max-sm:h-[134px] max-sm:p-[10px] max-sm:mr-0 max-sm:ml-4 rounded-xl border-[#E4C9EB] border-4 mr-4 w-[649px] h-[240px] text-center p-[32px]">
+        <div className=" max-sm:w-[338px] max-sm:h-[134px] max-sm:p-[10px] max-sm:mr-0 rounded-xl border-[#E4C9EB] border-4 mr-4 w-full h-[240px] text-center p-[32px]">
           <div className="flex flex-row items-center">
             <img src={AB4} alt="" className="max-sm:w-[40px] max-sm:h-[40px]" />
             <div className="max-sm:text-[12px] text-2xl text-[#4A335F] font-bold  pl-2">
