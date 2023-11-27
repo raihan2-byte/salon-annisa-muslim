@@ -8,7 +8,10 @@ const Hero = () => {
   return (
     <div
       className="max-sm:flex-col max-sm:pb-10 flex justify-between w-full"
-      style={{ backgroundImage: `url(${BackgroundHero})` }}
+      style={{
+        backgroundImage: `url(${BackgroundHero})`,
+        backgroundRepeat: "no-repeat",
+      }}
     >
       <div className="max-sm:w-full max-sm:p-2 w-1/2 m-auto text-center ">
         <div className="max-sm:flex max-sm:flex-col max-sm:gap-5 max-sm:p-3">
