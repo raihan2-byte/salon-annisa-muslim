@@ -14,10 +14,16 @@ const Lokasi = ({
 }) => {
   return (
     <div className="max-w-screen-2xl m-auto ">
-      <div
-        className={`"max-sm:m-2 max-sm:p-2 flex justify-between m-5 p-5 gap-2" ${
+      {/* <div
+        className={`"max-sm:m-2 max-sm:p-2 flex justify-between m-5 p-5 gap-10"  ${
           isGenap == true ? "flex-row-reverse" : "flex-row"
         }`}
+      > */}
+      <div
+        className={`max-sm:m-2 max-sm:p-2 flex justify-between m-3 p-2 gap-10 ${
+          isGenap ? "flex-row-reverse" : "flex-row"
+        }`}
+        style={{ gap: "20px" }}
       >
         <div
           className={`"max-sm:gap-2 flex flex-col gap-5 " ${
@@ -49,7 +55,7 @@ const Lokasi = ({
             </div>
             <div>
               <iframe
-                className="max-sm:w-[166px] max-sm:h-[44px] w-[550px] h-[300px]"
+                className="max-sm:w-[166px] max-sm:h-[44px] max-[768px]:w-[270px] max-[768px]:h-[150px] max-[900px]:w-[350px] max-[900px]:h-[200px]  w-[550px] h-[300px]"
                 src={Maps}
                 style={{ border: "0" }}
                 allowfullscreen=""

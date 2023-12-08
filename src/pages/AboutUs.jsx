@@ -57,7 +57,13 @@ export default function AboutUs() {
         {/* Box Grid 2 */}
         <div className="max-sm:w-[338px] max-sm:h-[134px] max-sm:p-[10px] max-sm:mr-0 rounded-xl border-[#E4C9EB] border-4 mr-4 w-full h-full text-center p-[32px] ">
           <div className="flex flex-row items-center">
-            <img src={AB2} alt="" className="max-sm:w-[40px] max-sm:h-[40px]" />
+            <div className="bg-[#E4C9EB] max-sm:h-[40px] max-sm:w-[40px] h-[88px] w-[88px] flex items-center justify-center rounded-[8px]">
+              <img
+                src={AB2}
+                alt=""
+                className="max-sm:w-20px] max-sm:h-[24px]"
+              />
+            </div>
             <div className="max-sm:text-[12px] text-2xl text-[#4A335F] font-bold  pl-2">
               Protokol Kesehatan
             </div>

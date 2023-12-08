@@ -5,12 +5,12 @@ import foto from "../assets/foto.png";
 export default function Kontak() {
   return (
     <div className="flex justify-between bg-white">
-      <div className="max-sm:pl-10 max-sm:p-0 p-20 my-auto font-syne">
-        <div className="max-sm:mb-4 mb-8 ">
-          <div className="max-sm:text-[10px] text-[#7E587D] mt-4 text-[24px] font-semibold">
+      <div className="max-sm:pl-10 max-sm:p-0 mx-16 my-auto font-syne">
+        <div className="max-sm:mb-4 mb-6">
+          <div className="max-sm:text-[10px] max-[900px]:text-[18px] text-[#7E587D] mt-4 text-[24px] font-semibold">
             ingin tau lebih lanjut?
           </div>
-          <div className="max-sm:text-[12px] text-[48px] text-[#4A335F] font-bold">
+          <div className="max-sm:text-[12px] max-[900px]:text-[33px] text-[48px] text-[#4A335F] font-bold">
             Hubungi Kami
           </div>
         </div>

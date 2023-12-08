@@ -46,15 +46,15 @@ export default function Testimonial() {
                     />
                   </div>
                   <div className="flex flex-col">
-                    <div className="max-sm:text-[6px] text-[24px] text-[#4A335F] font-semibold ml-4">
+                    <div className="max-sm:text-[6px] max-[900px]:text-[18px] text-[24px] text-[#4A335F] font-semibold ml-4">
                       Davin Ismatullah Faris
                     </div>
-                    <div className="max-sm:text-[5px] text-[16px] text-[#A67E99] font-semibold ml-4">
+                    <div className="max-sm:text-[5px] max-[900px]:text-[13px] text-[16px] text-[#A67E99] font-semibold ml-4">
                       Pelanggan
                     </div>
                   </div>
                 </div>
-                <div className="max-sm:m-1 max-sm:text-[5px] m-5 text-[#4A335F] text-center">
+                <div className="max-sm:m-1 max-sm:text-[5px] max-[900px]:text-[7px] m-4 text-[#4A335F] text-left">
                   Pelayanan salon sangat memuaskan, saya disambut dengan ramah
                   dan service yang diberikan cukup baik. Sudah beberapa kali
                   datang ke salon ini selalu worth it!{" "}
@@ -71,15 +71,15 @@ export default function Testimonial() {
                     />
                   </div>
                   <div className="flex flex-col">
-                    <div className="max-sm:text-[6px] text-[24px] text-[#4A335F] font-semibold ml-4">
+                    <div className="max-sm:text-[6px] max-[900px]:text-[18px] text-[24px] text-[#4A335F] font-semibold ml-4">
                       Davin Ismatullah Faris
                     </div>
-                    <div className="max-sm:text-[5px] text-[16px] text-[#A67E99] font-semibold ml-4">
+                    <div className="max-sm:text-[5px] max-[900px]:text-[13px] text-[16px] text-[#A67E99] font-semibold ml-4">
                       Pelanggan
                     </div>
                   </div>
                 </div>
-                <div className="max-sm:m-1 max-sm:text-[5px] m-5 text-[#4A335F] text-center">
+                <div className="max-sm:m-1 max-sm:text-[5px] max-[900px]:text-[7px] m-4 text-[#4A335F] text-left">
                   Pelayanan salon sangat memuaskan, saya disambut dengan ramah
                   dan service yang diberikan cukup baik. Sudah beberapa kali
                   datang ke salon ini selalu worth it!{" "}
@@ -91,8 +91,8 @@ export default function Testimonial() {
             <SwiperSlide>Slide 2</SwiperSlide>
           </div>
         </div>
-        <div className="swiper-button-next max-sm:h-3 "></div>
-        <div className="swiper-button-prev max-sm:h-3 "></div>
+        <div className="swiper-button-next max-sm:h-3 text-white"></div>
+        <div className="swiper-button-prev max-sm:h-3 text-white"></div>
       </Swiper>
     </>
   );

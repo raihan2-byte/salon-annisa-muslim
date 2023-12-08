@@ -3,14 +3,14 @@ import React from "react";
 import { FaBars } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { Link, NavLink } from "react-router-dom";
+import Clock from "./icons/Clock";
 
 const listMenu = [
   { name: "Beranda", content: [], path: "/" },
-  { name: "Blog", content: [], path: "/blog" },
   { name: "Lokasi", content: [], path: "/lokasi" },
+  { name: "Blog", content: [], path: "/blog" },
   { name: "Tentang Kami", content: [], path: "/tentangKami" },
-  { name: "Testimoni", content: [], path: "/testimoni" },
-  { name: "Kontak", content: [], path: "/kontak" },
+  { name: "Pesan Sekarang", content: [], path: "/pesan-sekarang" },
 ];
 
 const Navbar = () => {
@@ -29,23 +29,29 @@ const Navbar = () => {
         openNav ? "flex lg:hidden z-10 pointer-events-auto" : "hidden lg:flex"
       }`}
     >
-      {listMenu.map((item, key) => (
-        <NavLink
-          key={key}
-          to={item.path}
-          className="block antialiased text-sm font-light leading-normal text-blue-gray-900 p-1"
-        >
-          <p className="flex items-center duration-200 hover:text-[#6B6B0E] whitespace-nowrap">
-            {item.name}
-          </p>
-        </NavLink>
-      ))}
+      {listMenu.map((item, key) => {
+        if (item.path == "/pesan-sekarang") {
+          return <button className="lg:hidden">{item.name}</button>;
+        } else {
+          return (
+            <NavLink
+              key={key}
+              to={item.path}
+              className="block antialiased text-sm font-light leading-normal text-blue-gray-900 p-1"
+            >
+              <p className="flex items-center duration-200 hover:text-[#6B6B0E] whitespace-nowrap">
+                {item.name}
+              </p>
+            </NavLink>
+          );
+        }
+      })}
     </ul>
   );
 
   return (
     <nav className="font-syne block w-full shadow-md backdrop-saturate-200 backdrop-blur-2xl border border-white/80 bg-white text-black sticky top-0 z-10 px-0 py-2 bg-opacity-100 rounded-none h-max">
-      <div className="flex items-center justify-between text-blue-gray-900 px-14 relative w-full">
+      <div className="flex items-center justify-between text-blue-gray-900 px-14 relative w-full flex-row-reverse md:flex-row">
         <Link
           to="/"
           className="block antialiased font-sans text-base leading-relaxed text-inherit cursor-pointer py-1.5 font-medium z-20"
@@ -64,7 +70,12 @@ const Navbar = () => {
           )}
         </button>
         {navList}
-        <button className="max-sm:hidden">Tes</button>
+        <button className="max-sm:hidden hidden lg:block">
+          <div className="w-[212px] h-[49px] bg-gray-700 rounded-[3px] flex items-center justify-center text-white text-[15px]">
+            Pesan Sekarang
+            <Clock />
+          </div>
+        </button>
       </div>
     </nav>
   );

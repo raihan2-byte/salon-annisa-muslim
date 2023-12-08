@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Card from "./Card";
 
+import ArrowNext from "../icons/ArrowNext";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -12,6 +14,7 @@ import BgCard from "../../assets/backgroundcard.png";
 // import required modules
 import { Keyboard, Navigation } from "swiper/modules";
 import useIsMobile from "../../hooks/useIsMobile";
+import ArrowLeft from "../icons/ArrowLeft";
 
 const Perawatan = () => {
   const [show, setShow] = useState("Perawatan Rambut");
@@ -141,160 +144,207 @@ const Perawatan = () => {
 
   const isMobile = useIsMobile();
   return (
-    <div className="font-syne ">
-      <div className="max-sm:text-[16px] text-center text-[48px] mt-10">
-        Perawatan & Layanan
-      </div>
-      <div className="max-sm:mb-2 flex justify-center gap-3 mb-10">
-        <button
-          className={`max-sm:text-[6px] max-sm:w-[65px] max-sm:px-0 px-2 py-1 border-4 border-[#E4C9EB] w-[223px] ${
-            show == "Perawatan Rambut" ? "bg-[#7E587D]" : "bg-white"
-          } max-sm:mt-2 rounded-[134px] mt-6 text-[20px] text-black`}
-          onClick={() => setShow("Perawatan Rambut")}
-        >
-          Perawatan Rambut
-        </button>
-
-        <button
-          className={`max-sm:text-[6px] max-sm:w-[65px] max-sm:px-0 px-2 py-1 border-4 border-[#E4C9EB] w-[223px] ${
-            show == "Perawatan Wajah" ? "bg-[#7E587D]" : "bg-white"
-          } max-sm:mt-2 rounded-[134px] mt-6 text-[20px] text-black`}
-          onClick={() => setShow("Perawatan Wajah")}
-        >
-          Perawatan Wajah
-        </button>
-
-        <button
-          className={`max-sm:text-[6px] max-sm:w-[65px] max-sm:px-0 px-2 py-1 border-4 border-[#E4C9EB] w-[223px] ${
-            show == "Perawatan Tubuh" ? "bg-[#7E587D]" : "bg-white"
-          } max-sm:mt-2 rounded-[134px] mt-6 text-[20px] text-black`}
-          onClick={() => setShow("Perawatan Tubuh")}
-        >
-          Perawatan Tubuh
-        </button>
-      </div>
-      <div
-        className="max-sm:px-2 px-6"
-        style={{ backgroundImage: `url(${BgCard})` }}
-      >
-        {show == "Perawatan Rambut" && (
-          <Swiper
-            slidesPerView={isMobile ? 2 : 3}
-            spaceBetween={20}
-            keyboard={{
-              enabled: true,
-            }}
-            navigation={{
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            }}
-            modules={[Keyboard, Navigation]}
-            className="mySwiper max-sm:px-7 p-10"
+    <div className="bg-cover" style={{ backgroundImage: `url(${BgCard})` }}>
+      <div className="font-syne bg-transparent">
+        <div className="max-sm:text-[16px] text-center text-[48px] mt-10">
+          Perawatan & Layanan
+        </div>
+        <div className="max-sm:mb-0 flex justify-center gap-3 mb-10">
+          <button
+            className={`max-sm:text-[6px] max-sm:w-[65px] max-sm:px-0 px-2 py-1 border-4 border-[#E4C9EB] w-[223px] ${
+              show == "Perawatan Rambut" ? "bg-[#E4C9EB]" : "bg-white"
+            } max-sm:mt-2 rounded-[134px] mt-6 text-[20px] text-black`}
+            onClick={() => setShow("Perawatan Rambut")}
           >
-            <div>
-              {PerawatanRambut.map((item, index) => {
-                return (
-                  <SwiperSlide
-                    className="max-sm:px-3 flex justify-between w-fit px-5"
-                    key={index}
-                  >
-                    <div className="">
-                      <div className="">
-                        <Card
-                          isGenap={index % 2 != 0 ? true : false}
-                          TreatmentName={item.TreatmentName}
-                          TreatmentDesc={item.TreatmentDesc}
-                          TreatmentPrice={item.TreatmentPrice}
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
-            </div>
-            <div className="swiper-button-next  "></div>
-            <div className="swiper-button-prev  "></div>
-          </Swiper>
-        )}
-        {show == "Perawatan Wajah" && (
-          <Swiper
-            slidesPerView={isMobile ? 2 : 3}
-            spaceBetween={20}
-            keyboard={{
-              enabled: true,
-            }}
-            navigation={{
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            }}
-            modules={[Keyboard, Navigation]}
-            className="mySwiper p-7"
-          >
-            <div>
-              {PerawatanWajah.map((item, index) => {
-                return (
-                  <SwiperSlide
-                    className="max-sm:px-3 flex justify-between w-fit px-5"
-                    key={index}
-                  >
-                    <div className=" ">
-                      <div className="">
-                        <Card
-                          isGenap={index % 2 != 0 ? true : false}
-                          TreatmentName={item.TreatmentName}
-                          TreatmentDesc={item.TreatmentDesc}
-                          TreatmentPrice={item.TreatmentPrice}
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
-            </div>
-            <div className="swiper-button-next  "></div>
-            <div className="swiper-button-prev  "></div>
-          </Swiper>
-        )}
+            Perawatan Rambut
+          </button>
 
-        {show == "Perawatan Tubuh" && (
-          <Swiper
-            slidesPerView={isMobile ? 2 : 3}
-            spaceBetween={20}
-            keyboard={{
-              enabled: true,
-            }}
-            navigation={{
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            }}
-            modules={[Keyboard, Navigation]}
-            className="mySwiper p-7"
+          <button
+            className={`max-sm:text-[6px] max-sm:w-[65px] max-sm:px-0 px-2 py-1 border-4 border-[#E4C9EB] w-[223px] ${
+              show == "Perawatan Wajah" ? "bg-[#E4C9EB]" : "bg-white"
+            } max-sm:mt-2 rounded-[134px] mt-6 text-[20px] text-black`}
+            onClick={() => setShow("Perawatan Wajah")}
           >
-            <div>
-              {PerawatanTubuh.map((item, index) => {
-                return (
-                  <SwiperSlide
-                    className="max-sm:px-3 flex justify-between w-fit px-5"
-                    key={index}
-                  >
-                    <div className=" ">
+            Perawatan Wajah
+          </button>
+
+          <button
+            className={`max-sm:text-[6px] max-sm:w-[65px] max-sm:px-0 px-2 py-1 border-4 border-[#E4C9EB] w-[223px] ${
+              show == "Perawatan Tubuh" ? "bg-[#E4C9EB]" : "bg-white"
+            } max-sm:mt-2 rounded-[134px] mt-6 text-[20px] text-black`}
+            onClick={() => setShow("Perawatan Tubuh")}
+          >
+            Perawatan Tubuh
+          </button>
+        </div>
+        <div className="max-sm:px-2 px-6">
+          {show == "Perawatan Rambut" && (
+            <Swiper
+              slidesPerView={isMobile ? 2 : 3}
+              spaceBetween={20}
+              keyboard={{
+                enabled: true,
+              }}
+              navigation={{
+                nextEl: ".next",
+                prevEl: ".prev",
+              }}
+              modules={[Keyboard, Navigation]}
+              className="mySwiper max-sm:px-7 p-5 md:p-10"
+            >
+              <div>
+                {PerawatanRambut.map((item, index) => {
+                  return (
+                    <SwiperSlide
+                      className="max-sm:px-3 flex justify-between w-fit px-5"
+                      key={index}
+                    >
                       <div className="">
-                        <Card
-                          isGenap={index % 2 != 0 ? true : false}
-                          TreatmentName={item.TreatmentName}
-                          TreatmentDesc={item.TreatmentDesc}
-                          TreatmentPrice={item.TreatmentPrice}
-                        />
+                        <div className="">
+                          <Card
+                            isGenap={index % 2 != 0 ? true : false}
+                            TreatmentName={item.TreatmentName}
+                            TreatmentDesc={item.TreatmentDesc}
+                            TreatmentPrice={item.TreatmentPrice}
+                          />
+                        </div>
                       </div>
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
-            </div>
-            <div className="swiper-button-next  "></div>
-            <div className="swiper-button-prev  "></div>
-          </Swiper>
-        )}
+                    </SwiperSlide>
+                  );
+                })}
+              </div>
+              <div>
+                <button
+                  className="next absolute top-[45%] z-30 right-0"
+                  style={{
+                    filter: "drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.5))",
+                  }}
+                >
+                  <ArrowNext className="max-sm:w-5 max-sm:h-5" />
+                </button>
+                <button
+                  className="prev absolute top-[45%] z-30 left-0"
+                  style={{
+                    filter: "drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.5))",
+                  }}
+                >
+                  <ArrowLeft className="max-sm:w-5 max-sm:h-5" />
+                </button>
+              </div>
+            </Swiper>
+          )}
+          {show == "Perawatan Wajah" && (
+            <Swiper
+              slidesPerView={isMobile ? 2 : 3}
+              spaceBetween={20}
+              keyboard={{
+                enabled: true,
+              }}
+              navigation={{
+                nextEl: ".next",
+                prevEl: ".prev",
+              }}
+              modules={[Keyboard, Navigation]}
+              className="mySwiper max-sm:px-7 p-10"
+            >
+              <div>
+                {PerawatanWajah.map((item, index) => {
+                  return (
+                    <SwiperSlide
+                      className="max-sm:px-3 flex justify-between w-fit px-5"
+                      key={index}
+                    >
+                      <div className=" ">
+                        <div className="">
+                          <Card
+                            isGenap={index % 2 != 0 ? true : false}
+                            TreatmentName={item.TreatmentName}
+                            TreatmentDesc={item.TreatmentDesc}
+                            TreatmentPrice={item.TreatmentPrice}
+                          />
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  );
+                })}
+              </div>
+              <div>
+                <button
+                  className="next absolute top-[45%] z-30 right-0"
+                  style={{
+                    filter: "drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.5))",
+                  }}
+                >
+                  <ArrowNext />
+                </button>
+                <button
+                  className="prev absolute top-[45%] z-30 left-0"
+                  style={{
+                    filter: "drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.5))",
+                  }}
+                >
+                  <ArrowLeft />
+                </button>
+              </div>
+            </Swiper>
+          )}
+
+          {show == "Perawatan Tubuh" && (
+            <Swiper
+              slidesPerView={isMobile ? 2 : 3}
+              spaceBetween={20}
+              keyboard={{
+                enabled: true,
+              }}
+              navigation={{
+                nextEl: ".next",
+                prevEl: ".prev",
+              }}
+              modules={[Keyboard, Navigation]}
+              className="mySwiper max-sm:px-7 p-10"
+            >
+              <div>
+                {PerawatanTubuh.map((item, index) => {
+                  return (
+                    <SwiperSlide
+                      className="max-sm:px-3 flex justify-between w-fit px-5"
+                      key={index}
+                    >
+                      <div className=" ">
+                        <div className="">
+                          <Card
+                            isGenap={index % 2 != 0 ? true : false}
+                            TreatmentName={item.TreatmentName}
+                            TreatmentDesc={item.TreatmentDesc}
+                            TreatmentPrice={item.TreatmentPrice}
+                          />
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  );
+                })}
+              </div>
+              <div>
+                <button
+                  className="next absolute top-[45%] z-30 right-0"
+                  style={{
+                    filter: "drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.5))",
+                  }}
+                >
+                  <ArrowNext />
+                </button>
+                <button
+                  className="prev absolute top-[45%] z-30 left-0"
+                  style={{
+                    filter: "drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.5))",
+                  }}
+                >
+                  <ArrowLeft />
+                </button>
+              </div>
+            </Swiper>
+          )}
+        </div>
       </div>
     </div>
   );
