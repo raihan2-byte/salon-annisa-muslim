@@ -1,8 +1,8 @@
 import Layout from "../components/Layout";
 import AB1 from "../assets/aboutUs1.svg";
 import AB2 from "../assets/aboutUs2.svg";
-import AB3 from "../assets/aboutUs3.svg";
-import AB4 from "../assets/aboutUs4.svg";
+import AB3 from "../assets/aboutUs3.png";
+import AB4 from "../assets/aboutUs4.png";
 
 {
   /* Tentang Kami */
@@ -76,7 +76,13 @@ export default function AboutUs() {
         {/* Box Grid 3 */}
         <div className="max-sm:w-[338px] max-sm:h-[134px] max-sm:p-[10px]  rounded-xl border-[#E4C9EB] border-4 w-full h-full text-center p-[32px]">
           <div className="flex flex-row items-center ">
-            <img src={AB3} alt="" className="max-sm:w-[40px] max-sm:h-[40px]" />
+            <div className="bg-[#E4C9EB] max-sm:h-[40px] max-sm:w-[40px] h-[88px] w-[88px] flex items-center justify-center rounded-[8px]">
+              <img
+                src={AB3}
+                alt=""
+                className="max-sm:w-[40px] max-sm:h-[40px]"
+              />
+            </div>
             <div className="max-sm:text-[12px] text-2xl text-[#4A335F] font-bold  pl-2">
               Ulasan Positive Pelanggan
             </div>
@@ -89,7 +95,14 @@ export default function AboutUs() {
         {/* Box Grid 4 */}
         <div className=" max-sm:w-[338px] max-sm:h-[134px] max-sm:p-[10px] max-sm:mr-0 rounded-xl border-[#E4C9EB] border-4 mr-4 w-full h-full text-center p-[32px]">
           <div className="flex flex-row items-center">
-            <img src={AB4} alt="" className="max-sm:w-[40px] max-sm:h-[40px]" />
+            <div className="bg-[#E4C9EB] max-sm:h-[40px] max-sm:w-[40px] h-[88px] w-[88px] flex items-center justify-center rounded-[8px]">
+              <img
+                src={AB4}
+                alt=""
+                className="max-sm:w-[40px] max-sm:h-[40px]"
+              />
+            </div>
+
             <div className="max-sm:text-[12px] text-2xl text-[#4A335F] font-bold  pl-2">
               Layanan Terbaik
             </div>
