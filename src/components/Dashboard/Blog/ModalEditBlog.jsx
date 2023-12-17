@@ -22,9 +22,10 @@ export default function ModalEditBlog({
       reader.onloadend = () => {
         setImgPreview(reader.result);
       };
-      reader.readAsDataURL(form.file[0]);
+      reader.readAsDataURL(form.file);
     }
   }, [form.file]);
+
   useEffect(() => {
     if (dataEdit) {
       setForm({
@@ -34,16 +35,12 @@ export default function ModalEditBlog({
       });
       setImgPreview(dataEdit?.FileName);
     }
-  }, [dataEdit]);
+  }, [dataEdit, isModalOpen]);
 
   const handleUpdate = async (data) => {
     toast.loading("Loading...");
     try {
-      const res = await updateBlog(dataEdit?.Slug, {
-        title: data.title,
-        description: data.description,
-        file: data.file[0] || dataEdit?.FileName,
-      });
+      const res = await updateBlog(dataEdit?.Slug, data);
       toast.dismiss();
       toast.success("Blog Updated");
       setForm({ title: "", description: "", file: null });
@@ -104,7 +101,11 @@ export default function ModalEditBlog({
             type="file"
             className="hidden"
             id="file"
-            onChange={(e) => setForm({ ...form, file: e.target.files })}
+            accept="image/png, image/jpeg"
+            onChange={(e) => {
+              setForm({ ...form, file: e.target.files[0] });
+            }}
+            value={form?.file}
           />
           {imgPreview && (
             <img
@@ -119,6 +120,9 @@ export default function ModalEditBlog({
             className="w-full py-2 rounded-md text-[#4A335F] border-2 border-[#4A335F]"
             onClick={() => {
               handleCancel();
+              setForm({ title: "", description: "", file: null });
+              const file = document.getElementById("file");
+              file.value = "";
             }}
             type="button"
           >

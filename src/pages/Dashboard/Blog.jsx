@@ -7,7 +7,9 @@ import { getAllBlog } from "../../service/blog/api";
 import toast from "react-hot-toast";
 import ModalBlog from "../../components/Dashboard/Blog/ModalCreateBlog";
 import ModalEditBlog from "../../components/Dashboard/Blog/ModalEditBlog";
-import { Spin, Empty } from "antd";
+import { Spin, Empty, Pagination, Image } from "antd";
+import ModalDeleteBlog from "../../components/Dashboard/Blog/ModaldeleteBlog";
+
 export default function Blog() {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -61,10 +63,12 @@ export default function Blog() {
                       <tr key={index} className="text-gray-700 font-medium">
                         <td className="whitespace-nowrap pr-6 pl-14 py-4 ">
                           {/* <div className="w-[158px] h-[88px] bg-zinc-300" /> */}
-                          <img
+                          <Image
                             src={item.FileName}
                             alt="blog"
-                            className="w-[158px] h-[88px] object-contain"
+                            width={158}
+                            height={88}
+                            className="object-contain "
                           />
                         </td>
                         <td className=" px-6 py-4 flex justify-start">
@@ -82,7 +86,10 @@ export default function Blog() {
                           >
                             <BiPencil size={20} />
                           </button>
-                          <button className="bg-gray-700 rounded-lg text-white p-1.5">
+                          <button
+                            onClick={() => setIsModalOpen(item.Slug + "delete")}
+                            className="bg-gray-700 rounded-lg text-white p-1.5"
+                          >
                             <FaRegTrashAlt size={20} />
                           </button>
                           <ModalEditBlog
@@ -91,6 +98,13 @@ export default function Blog() {
                             handleCancel={() => setIsModalOpen(false)}
                             handleGetBlog={handleGetBlog}
                             key={index}
+                          />
+                          <ModalDeleteBlog
+                            dataEdit={item}
+                            handleCancel={() => setIsModalOpen(false)}
+                            handleGetBlog={handleGetBlog}
+                            key={index + "delete"}
+                            isModalOpen={isModalOpen === item.Slug + "delete"}
                           />
                         </td>
                       </tr>

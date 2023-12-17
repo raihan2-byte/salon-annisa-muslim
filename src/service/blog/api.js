@@ -27,3 +27,11 @@ export const updateBlog = async (slug, data) => {
   });
   return res.data;
 };
+
+export const deleteBlog = async (slug) => {
+  const res = await axios.delete(`${baseUrl}/blog/${slug}`, {
+    headers: {
+      Authorization: `Bearer ${token()}`,
+    },
+  });
+};

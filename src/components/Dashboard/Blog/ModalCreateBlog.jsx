@@ -68,7 +68,7 @@ export default function ModalCreateBlog({
             className="w-full bg-white rounded border-2 border-[#4A335F] px-3 py-1"
             id="title"
             onChange={(e) => setForm({ ...form, title: e.target.value })}
-            value={form?.title}
+            value={form?.title || ""}
           />
         </div>
         <div className="mb-3">
@@ -78,7 +78,7 @@ export default function ModalCreateBlog({
             className="w-full bg-white rounded border-2 border-[#4A335F] px-3 py-1"
             id="description"
             onChange={(e) => setForm({ ...form, description: e.target.value })}
-            value={form?.description}
+            value={form?.description || ""}
           />
         </div>
         <div className="mb-3 flex flex-col">
@@ -96,7 +96,7 @@ export default function ModalCreateBlog({
             className="hidden"
             id="file"
             onChange={(e) => setForm({ ...form, file: e.target.files })}
-            value={form?.file && form?.file[0]}
+            value={(form?.file && form?.file[0]) || ""}
           />
           {imgPreview && (
             <img
