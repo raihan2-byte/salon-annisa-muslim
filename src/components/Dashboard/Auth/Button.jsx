@@ -23,7 +23,7 @@ export default function Button({
         danger && "bg-rose-500 hover:bg-red-600 focus-visible:outline-rose-600",
         !secondary &&
           !danger &&
-          "bg-[#F4d853] hover:bg-[#dcc24b] focus-visible:outline-sky-600 "
+          "bg-purple-200 hover:bg-purple-300 focus-visible:outline-sky-600 "
       )}
     >
       {children}

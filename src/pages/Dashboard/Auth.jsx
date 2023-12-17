@@ -9,6 +9,7 @@ import { login, registerAuth } from "../../service/auth/api";
 import toast from "react-hot-toast";
 import useStore from "../../store";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Auth() {
   const [variant, setVariant] = useState("LOGIN");
@@ -83,11 +84,9 @@ export default function Auth() {
   return (
     <div className="flex min-h-screen flex-col justify-center py-12 sm:px-6 lg:px-8 bg-gray-100">
       <div className="sm:mx-auto sm:w-full sm:max-w-md flex flex-col justify-center">
-        <img
-          src={Logo}
-          alt=""
-          className="max-sm:w-[135px] max-sm:h-[15px] ml-[8px]"
-        />
+        <Link to="/" className="max-sm:w-[135px] max-sm:h-[15px] ml-[8px]">
+          <img src={Logo} alt="" className="w-full" />
+        </Link>
         <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
           {variant === "REGISTER" ? "Buat Akun" : "Masuk"}
         </h2>
