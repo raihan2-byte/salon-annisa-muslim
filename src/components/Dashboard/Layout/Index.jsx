@@ -7,6 +7,7 @@ import { MdOutlineMenu } from "react-icons/md";
 export default function DashboardLayout({ children }) {
   const [showNav, setShowNav] = useState(true);
   const isMobile = useIsMobile();
+
   useEffect(() => {
     if (isMobile) {
       setShowNav(false);
