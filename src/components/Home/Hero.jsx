@@ -15,7 +15,7 @@ const Hero = () => {
     >
       <div className="max-sm:w-full max-sm:p-2 w-1/2 m-auto text-center ">
         <div className="max-sm:flex max-sm:flex-col max-sm:gap-5 max-sm:p-3">
-          <div className="max-sm:text-3xl text-5xl font-syne font-bold">
+          <div className="max-sm:text-3xl text-5xl font-syne font-bold text-[#4A335F]">
             SALON
           </div>
           <div className="max-sm:w-full max-sm:flex max-sm:flex-col max-sm:gap-3 w-[65%] m-auto">

@@ -146,14 +146,14 @@ const Perawatan = () => {
   return (
     <div className="bg-cover" style={{ backgroundImage: `url(${BgCard})` }}>
       <div className="font-syne bg-transparent">
-        <div className="max-sm:text-[16px] text-center text-[48px] mt-10">
+        <div className="max-sm:text-[16px] text-center text-[48px] mt-10 font-bold text-[#4A335F]">
           Perawatan & Layanan
         </div>
         <div className="max-sm:mb-0 flex justify-center gap-3 mb-10">
           <button
             className={`max-sm:text-[6px] max-sm:w-[65px] max-sm:px-0 px-2 py-1 border-4 border-[#E4C9EB] w-[223px] ${
               show == "Perawatan Rambut" ? "bg-[#E4C9EB]" : "bg-white"
-            } max-sm:mt-2 rounded-[134px] mt-6 text-[20px] text-black`}
+            } max-sm:mt-2 rounded-[134px] mt-6 text-[20px] text-[#7E587D]`}
             onClick={() => setShow("Perawatan Rambut")}
           >
             Perawatan Rambut
@@ -162,7 +162,7 @@ const Perawatan = () => {
           <button
             className={`max-sm:text-[6px] max-sm:w-[65px] max-sm:px-0 px-2 py-1 border-4 border-[#E4C9EB] w-[223px] ${
               show == "Perawatan Wajah" ? "bg-[#E4C9EB]" : "bg-white"
-            } max-sm:mt-2 rounded-[134px] mt-6 text-[20px] text-black`}
+            } max-sm:mt-2 rounded-[134px] mt-6 text-[20px] text-[#7E587D]`}
             onClick={() => setShow("Perawatan Wajah")}
           >
             Perawatan Wajah
@@ -171,7 +171,7 @@ const Perawatan = () => {
           <button
             className={`max-sm:text-[6px] max-sm:w-[65px] max-sm:px-0 px-2 py-1 border-4 border-[#E4C9EB] w-[223px] ${
               show == "Perawatan Tubuh" ? "bg-[#E4C9EB]" : "bg-white"
-            } max-sm:mt-2 rounded-[134px] mt-6 text-[20px] text-black`}
+            } max-sm:mt-2 rounded-[134px] mt-6 text-[20px] text-[#7E587D]`}
             onClick={() => setShow("Perawatan Tubuh")}
           >
             Perawatan Tubuh
