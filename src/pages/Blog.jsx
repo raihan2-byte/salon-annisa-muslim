@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Layout from "../components/Layout";
+import { Pagination } from "antd";
+import { getAllBlog } from "../service/blog/api";
+import toast from "react-hot-toast";
 
 export default function Blog() {
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleGetBlog = useCallback(async () => {
+    setIsLoading(true);
+    try {
+      const res = await getAllBlog();
+      setData(res.data);
+    } catch (error) {
+      toast.error(error.message);
+    }
+    setIsLoading(false);
+  }, [getAllBlog]);
+
+  useEffect(() => {
+    handleGetBlog();
+  }, []);
   return (
     <Layout>
       <div className="py-20 px-16">
@@ -44,6 +64,9 @@ export default function Blog() {
                 </div>
               </div>
             ))}
+        </div>
+        <div className="w-full flex justify-center mt-10">
+          <Pagination defaultCurrent={1} total={50} />
         </div>
       </div>
     </Layout>
