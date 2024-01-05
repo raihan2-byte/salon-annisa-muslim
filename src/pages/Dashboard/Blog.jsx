@@ -92,13 +92,15 @@ export default function Blog() {
                           >
                             <FaRegTrashAlt size={20} />
                           </button>
-                          <ModalEditBlog
-                            dataEdit={item}
-                            isModalOpen={isModalOpen === item.Slug}
-                            handleCancel={() => setIsModalOpen(false)}
-                            handleGetBlog={handleGetBlog}
-                            key={index}
-                          />
+                          {isModalOpen === item.Slug && (
+                            <ModalEditBlog
+                              dataEdit={item}
+                              isModalOpen={isModalOpen === item.Slug}
+                              handleCancel={() => setIsModalOpen(false)}
+                              handleGetBlog={handleGetBlog}
+                              key={item.Slug}
+                            />
+                          )}
                           <ModalDeleteBlog
                             dataEdit={item}
                             handleCancel={() => setIsModalOpen(false)}

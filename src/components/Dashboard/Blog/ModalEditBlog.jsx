@@ -16,6 +16,15 @@ export default function ModalEditBlog({
     description: "",
     file: null,
   });
+
+  const closeModal = () => {
+    setForm({ title: "", description: "", file: null });
+    const file = document.getElementById("file");
+    file.value = "";
+    setImgPreview(null);
+    handleCancel();
+  };
+
   useEffect(() => {
     if (form.file) {
       const reader = new FileReader();
@@ -61,6 +70,7 @@ export default function ModalEditBlog({
   };
   return (
     <Modal
+      key={dataEdit?.Slug}
       centered
       open={isModalOpen}
       className="py-8"
@@ -105,7 +115,6 @@ export default function ModalEditBlog({
             onChange={(e) => {
               setForm({ ...form, file: e.target.files[0] });
             }}
-            value={form?.file}
           />
           {imgPreview && (
             <img
@@ -118,12 +127,7 @@ export default function ModalEditBlog({
         <div className="w-full flex flex-row gap-5 mt-8">
           <button
             className="w-full py-2 rounded-md text-[#4A335F] border-2 border-[#4A335F]"
-            onClick={() => {
-              handleCancel();
-              setForm({ title: "", description: "", file: null });
-              const file = document.getElementById("file");
-              file.value = "";
-            }}
+            onClick={closeModal}
             type="button"
           >
             Batal

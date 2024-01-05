@@ -127,9 +127,7 @@ export default function Auth() {
           </form>
           <div className="flex gap-2 justify-center text-sm mt-6 px-2 text-gray-500">
             <div>
-              {variant === "LOGIN"
-                ? "New to Vichat Messenger?"
-                : "Already have an account?"}
+              {variant === "LOGIN" ? "Belum punya akun?" : "Sudah punya akun?"}
             </div>
             <div onClick={toggleVariant} className="underline cursor-pointer ">
               {variant === "LOGIN" ? "Create an account" : "Login"}
