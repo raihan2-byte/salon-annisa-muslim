@@ -4,6 +4,8 @@ import { FaBars } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { Link, NavLink } from "react-router-dom";
 import Clock from "./icons/Clock";
+import Logo from "../assets/logo1.png";
+import Logo2 from "../assets/logo2.png";
 
 const listMenu = [
   { name: "Beranda", content: [], path: "/" },
@@ -50,13 +52,24 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="font-syne block w-full shadow-md backdrop-saturate-200 backdrop-blur-2xl border border-white/80 bg-white text-black sticky top-0 z-10 px-0 py-2 bg-opacity-100 rounded-none h-max">
+    <nav className="font-syne font-medium block w-full shadow-md backdrop-saturate-200 backdrop-blur-2xl border border-white/80 bg-white text-black sticky top-0 z-10 px-0 py-2 bg-opacity-100 rounded-none h-max">
       <div className="flex items-center justify-between text-blue-gray-900 px-14 relative w-full flex-row-reverse md:flex-row">
         <Link
           to="/"
           className="block antialiased font-sans text-base leading-relaxed text-inherit cursor-pointer py-1.5 font-medium z-20"
         >
-          Annisa
+          <div className="flex gap-5 items-center">
+            <img
+              src={Logo}
+              alt="logo"
+              className="max-sm:w-[30px] max-sm:h-[40px] w-[63px] h-[70px]"
+            />
+            <img
+              src={Logo2}
+              alt="logo"
+              className="max-sm:w-[90px] max-sm:h-[20px] w-[120px] h-[30px] "
+            />
+          </div>
         </Link>
         <button
           className="relative align-middle select-none text-center uppercase transition-all max-w-[40px] max-h-[40px] text-xs lg:hidden z-20"
@@ -71,7 +84,7 @@ const Navbar = () => {
         </button>
         {navList}
         <button className="max-sm:hidden hidden lg:block">
-          <div className="w-[212px] h-[49px] bg-gray-700 rounded-[3px] flex items-center justify-center text-white text-[15px]">
+          <div className=" hover:opacity-90 w-[212px] h-[49px] bg-[#4A335F] font-medium rounded-[3px] flex items-center justify-center text-white text-[15px]">
             Pesan Sekarang
             <Clock />
           </div>

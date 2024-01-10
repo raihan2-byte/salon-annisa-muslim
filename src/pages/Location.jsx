@@ -7,6 +7,8 @@ import SimpangMas from "../assets/simpang-mas.png";
 import MetroIndah from "../assets/metro-indah.png";
 import MargaCinta from "../assets/marga-cinta.png";
 import Backround from "../assets/backgroundLokasi.png";
+import ArrowNextLocation from "../assets/arrowNextLocation.svg";
+import ArrowLeftLocation from "../assets/arrowLeftLocation.svg";
 
 import Contact from "../components/Kontak";
 
@@ -17,6 +19,8 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Keyboard, Navigation, Pagination } from "swiper/modules";
+import ArrowNext from "../components/icons/ArrowNext";
+import ArrowLeft from "../components/icons/ArrowLeft";
 
 export default function Home() {
   const slide = [
@@ -64,8 +68,14 @@ export default function Home() {
         keyboard={{
           enabled: true,
         }}
-        navigation={true}
-        pagination={true}
+        navigation={{
+          nextEl: ".next",
+          prevEl: ".prev",
+        }}
+        pagination={{
+          nextEl: ".next",
+          prevEl: ".prev",
+        }}
         modules={[Keyboard, Navigation, Pagination]}
         className="max-sm:py-5 max-sm:px-0 mySwiper p-7 "
         style={{
@@ -91,12 +101,26 @@ export default function Home() {
             </SwiperSlide>
           );
         })}
+        <div>
+          <button className="next absolute top-[50%] z-30 right-0">
+            <ArrowNext className="max-sm:w-5 max-sm:h-5 w-[18px] h-[26px]" />
+          </button>
+          <button className="prev absolute top-[50%] z-30 left-0">
+            <ArrowLeft className="max-sm:w-5 max-sm:h-5 w-[18px] h-[26px]" />
+          </button>
+        </div>
       </Swiper>
       <style>
         {`
+         .next, .prev {
+          padding-left : 40px;
+          padding-right : 40px;
+          
+        }
   @media (max-width: 600px) {
-    .swiper-button-next, .swiper-button-prev {
+    .next, .prev {
       display: none;
+      
     }
     
   `}

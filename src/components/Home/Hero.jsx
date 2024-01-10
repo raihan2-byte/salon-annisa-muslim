@@ -22,13 +22,13 @@ const Hero = () => {
             <div className="max-sm:text-2xl text-4xl text-[#E4C9EB] font-syne font-bold">
               ANNISA MUSLIMAH
             </div>
-            <div className="font-syne">
+            <div className="font-syne w-[80%] m-auto">
               Memenuhi kebutuhan para muslimah sesuai dengan syariat Islam
             </div>
           </div>
         </div>
         <div className="max-sm:mt-10 flex items-center justify-center mt-20">
-          <button className="bg-[#4A335F] p-3 flex items-center justify-center text-white rounded-sm ">
+          <button className="bg-[#4A335F] text-[15px] flex items-center justify-center text-white rounded-sm w-[212px] h-[49px]">
             Layanan Kami
             <img src={next} alt="no foto" className="ml-2" />
           </button>

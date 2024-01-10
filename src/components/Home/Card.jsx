@@ -18,7 +18,7 @@ const Card = ({ TreatmentName, TreatmentDesc, TreatmentPrice, isGenap }) => {
             {TreatmentPrice}
           </div>
           <div className="flex justify-center items-center">
-            <button className="max-sm:text-[6px] max-sm:h-[21px] max-sm:p-0 max-sm:w-[70px] text-[20px] bg-[#4A335F] p-5 flex items-center justify-center text-white rounded-sm h-[60px]">
+            <button className="max-sm:text-[6px] max-sm:h-[21px] max-sm:p-0 max-sm:w-[70px] text-[20px] font-poppins bg-[#4A335F] flex items-center justify-center text-white  w-[223px] h-[67px]">
               More Info
               <img
                 src={next}
